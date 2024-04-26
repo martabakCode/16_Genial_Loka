@@ -9,7 +9,7 @@
                             {!! __('pagination.previous') !!}
                         </span>
                     @else
-                        <a href="{{ $paginator->previousPageUrl() }}" rel="prev" class="btn bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-indigo-500">
+                        <a href="{{ $paginator->previousPageUrl() }}" rel="prev" class="btn bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-primary-500">
                             {!! __('pagination.previous') !!}
                         </a>
                     @endif
@@ -18,7 +18,7 @@
                 {{-- Next Page Link --}}
                 <li class="ml-3 first:ml-0">
                     @if ($paginator->hasMorePages())
-                        <a href="{{ $paginator->nextPageUrl() }}" rel="next" class="btn bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-indigo-500">
+                        <a href="{{ $paginator->nextPageUrl() }}" rel="next" class="btn bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-primary-500">
                             {!! __('pagination.next') !!}
                         </a>
                     @else

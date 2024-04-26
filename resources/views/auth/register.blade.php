@@ -33,7 +33,7 @@
             </div>
             <x-button>
                 {{ __('Sign Up') }}
-            </x-button>                
+            </x-button>
         </div>
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-6">
@@ -43,17 +43,17 @@
                             {!! __('I agree to the :terms_of_service and :privacy_policy', [
                                 'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="text-sm underline hover:no-underline">'.__('Terms of Service').'</a>',
                                 'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="text-sm underline hover:no-underline">'.__('Privacy Policy').'</a>',
-                            ]) !!}                        
+                            ]) !!}
                         </span>
                     </label>
                 </div>
-            @endif        
+            @endif
     </form>
-    <x-validation-errors class="mt-4" />  
+    <x-validation-errors class="mt-4" />
     <!-- Footer -->
     <div class="pt-5 mt-6 border-t border-slate-200 dark:border-slate-700">
         <div class="text-sm">
-            {{ __('Have an account?') }} <a class="font-medium text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400" href="{{ route('login') }}">{{ __('Sign In') }}</a>
+            {{ __('Have an account?') }} <a class="font-medium text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" href="{{ route('login') }}">{{ __('Sign In') }}</a>
         </div>
     </div>
 </x-authentication-layout>

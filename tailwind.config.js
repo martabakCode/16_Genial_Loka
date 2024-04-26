@@ -14,6 +14,26 @@ export default {
     darkMode: 'class',
     theme: {
         extend: {
+            colors:{
+                primary: {
+                    '50': '#f1fcf1',
+                    '100': '#e0f9df',
+                    '200': '#c2f1c1',
+                    '300': '#92e491',
+                    '400': '#5acf59',
+                    '500': '#34b433',
+                    '600': '#228b22',
+                    '700': '#207521',
+                    '800': '#1e5d1f',
+                    '900': '#1a4d1b',
+                    '950': '#092a0b',
+                },
+
+
+
+
+
+            },
             boxShadow: {
                 DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.02)',
                 md: '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
@@ -70,6 +90,6 @@ export default {
             addVariant('sidebar-expanded', ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => `.sidebar-expanded .${e(`sidebar-expanded${separator}${className}`)}`);
             });
-        }),        
+        }),
     ],
 };
