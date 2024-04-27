@@ -9,8 +9,8 @@
 @section('content')
     <p>Location panel.</p>
     <button class="btn btn-sm btn-success mb-3">
-        <a href="{{ url('/admin/location/create') }}" class="text-white">
-            Tambah Lokasi
+        <a href="{{ url('/admin/animals/create') }}" class="text-white">
+            Tambah Hewan
         </a>
     </button>
     <div class="row">
@@ -34,43 +34,63 @@
                                     <thead>
                                     <tr>
                                         <th class="sorting sorting_asc">
-                                            ID
+                                            Lokasi
                                         </th>
                                         <th class="sorting">
-                                            Name
+                                            Nama
                                         </th>
                                         <th class="sorting">
-                                            description
+                                            Spesias
                                         </th>
                                         <th class="sorting">
-                                            weight
+                                            Nama Latin
                                         </th>
                                         <th class="sorting">
-                                            status
+                                            Deskripsi
                                         </th>
                                         <th class="sorting">
-                                            operational time
+                                            Makanan
                                         </th>
                                         <th class="sorting">
-                                            action
+                                            Reproduksi
+                                        </th>
+                                        <th class="sorting">
+                                            Waktu Makan
+                                        </th>
+                                        <th class="sorting">
+                                            Lahir
+                                        </th>
+                                        <th class="sorting">
+                                            Berat
+                                        </th>
+                                        <th class="sorting">
+                                            Is Feedable
+                                        </th>
+                                        <th class="sorting">
+                                            Action
                                         </th>
                                     </tr>
                                     </thead>
                                     <tbody>
 
-                                    @foreach($locations as $location)
+                                    @foreach($animals as $animal)
                                         <tr>
-                                            <td class="dtr-control sorting_1" tabindex="0">{{ $location->id }}</td>
-                                            <td>{{ $location->name }}</td>
-                                            <td>{{ $location->description }}</td>
-                                            <td>{{ $location->weight }}</td>
-                                            <td>{{ $location->status }}</td>
-                                            <td>{{ $location->operational_time }}</td>
+                                            <td class="dtr-control sorting_1" tabindex="0">{{ $animal->location->name }}</td>
+                                            <td>{{ $animal->name }}</td>
+                                            <td>{{ $animal->species }}</td>
+                                            <td>{{ $animal->latin_name }}</td>
+                                            <td>{{ $animal->description }}</td>
+                                            <td>{{ $animal->food }}</td>
+                                            <td>{{ $animal->reproduction }}</td>
+                                            <td>{{ $animal->feeding_time }}</td>
+                                            <td>{{ $animal->date_of_birth }}</td>
+                                            <td>{{ $animal->weight }}</td>
+                                            <td>{{ $animal->is_feedable }}</td>
                                             <td>
-                                                <a href="{{ url('/admin/location/update/' . $location->id) }}">
+                                                <a href="{{ url('/admin/animals/' . $animal->id . '/update') }}">
                                                     Edit
                                                 </a> |
-                                                <a href="{{ url('/admin/location/destroy/' . $location->id) }}">
+                                                <a href="{{ url('/admin/animals/' . $animal->id . '/destroy') }}">
                                                     Delete
                                                 </a>
                                             </td>
