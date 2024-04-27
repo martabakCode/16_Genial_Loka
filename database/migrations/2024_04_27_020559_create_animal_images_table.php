@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('animal_images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->string('longitude');
-            $table->string('latitude');
-            $table->string('status');
-            $table->string('operational_time');
+            $table->foreignId('animal_id')->constrained();
+            $table->string('file_name');
+            $table->string('url');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('animal_images');
     }
 };

@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('location_id')->constrained();
             $table->string('name');
+            $table->text('description');
             $table->string('food');
             $table->string('reproduction');
             $table->string('feeding_time');
             $table->date('date_of_birth');
+            $table->float('weight');
+            $table->boolean('is_feedable');
             $table->timestamps();
         });
     }

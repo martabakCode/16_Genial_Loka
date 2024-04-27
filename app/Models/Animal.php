@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class Animal extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
         'description',
-        'longitude',
-        'latitude',
-        'status',
-        'operational_time',
-    ];
+        'food',
+        'reproduction',
+        'feeding_time',
+        'date_of_birth',
+        'weight',
+        'is_feedable',
+    ]
 }
