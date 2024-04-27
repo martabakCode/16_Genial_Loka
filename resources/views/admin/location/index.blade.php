@@ -22,116 +22,49 @@
                             <div class="col-sm-12 col-md-6"></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-12">
-                                <table id="example2"
+                            <div class="col-sm-12 table-responsive">
+                                <table id="example"
                                        class="table table-bordered table-hover dataTable dtr-inline collapsed"
                                        aria-describedby="example2_info">
                                     <thead>
                                     <tr>
-                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2"
-                                            rowspan="1" colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Rendering
-                                            engine
+                                        <th class="sorting sorting_asc">
+                                            ID
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Browser: activate to sort column ascending">Browser
+                                        <th class="sorting">
+                                            Name
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Platform(s): activate to sort column ascending"
-                                            style="">Platform(s)
+                                        <th class="sorting">
+                                            description
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Engine version: activate to sort column ascending"
-                                            style="display: none;">Engine version
+                                        <th class="sorting">
+                                            weight
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                            style="display: none;">CSS grade
+                                        <th class="sorting">
+                                            status
+                                        </th>
+                                        <th class="sorting">
+                                            operational time
+                                        </th>
+                                        <th class="sorting">
+                                            action
                                         </th>
                                     </tr>
                                     </thead>
                                     <tbody>
 
-                                    <tr class="odd">
-                                        <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td style="">Win 98+ / OSX.2+</td>
-                                        <td style="display: none;">1.7</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="even">
-                                        <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                                        <td>Firefox 1.5</td>
-                                        <td style="">Win 98+ / OSX.2+</td>
-                                        <td style="display: none;">1.8</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                                        <td>Firefox 2.0</td>
-                                        <td style="">Win 98+ / OSX.2+</td>
-                                        <td style="display: none;">1.8</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="even">
-                                        <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                                        <td>Firefox 3.0</td>
-                                        <td style="">Win 2k+ / OSX.3+</td>
-                                        <td style="display: none;">1.9</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1 dtr-control">Gecko</td>
-                                        <td>Camino 1.0</td>
-                                        <td style="">OSX.2+</td>
-                                        <td style="display: none;">1.8</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="even">
-                                        <td class="sorting_1 dtr-control">Gecko</td>
-                                        <td>Camino 1.5</td>
-                                        <td style="">OSX.3+</td>
-                                        <td style="display: none;">1.8</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1 dtr-control">Gecko</td>
-                                        <td>Netscape 7.2</td>
-                                        <td style="">Win 95+ / Mac OS 8.6-9.2</td>
-                                        <td style="display: none;">1.7</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="even">
-                                        <td class="sorting_1 dtr-control">Gecko</td>
-                                        <td>Netscape Browser 8</td>
-                                        <td style="">Win 98SE+</td>
-                                        <td style="display: none;">1.7</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td class="sorting_1 dtr-control">Gecko</td>
-                                        <td>Netscape Navigator 9</td>
-                                        <td style="">Win 98+ / OSX.2+</td>
-                                        <td style="display: none;">1.8</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
-                                    <tr class="even">
-                                        <td class="sorting_1 dtr-control">Gecko</td>
-                                        <td>Mozilla 1.0</td>
-                                        <td style="">Win 95+ / OSX.1+</td>
-                                        <td style="display: none;">1</td>
-                                        <td style="display: none;">A</td>
-                                    </tr>
+                                    @foreach($locations as $location)
+                                        <tr>
+                                            <td class="dtr-control sorting_1" tabindex="0">{{ $location->id }}</td>
+                                            <td>{{ $location->name }}</td>
+                                            <td>{{ $location->description }}</td>
+                                            <td>{{ $location->weight }}</td>
+                                            <td>{{ $location->status }}</td>
+                                            <td>{{ $location->operational_time }}</td>
+                                            <td> edit | delete</td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <th rowspan="1" colspan="1">Rendering engine</th>
-                                        <th rowspan="1" colspan="1">Browser</th>
-                                        <th rowspan="1" colspan="1" style="">Platform(s)</th>
-                                        <th rowspan="1" colspan="1" style="display: none;">Engine version</th>
-                                        <th rowspan="1" colspan="1" style="display: none;">CSS grade</th>
-                                    </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </div>
@@ -148,5 +81,9 @@
 @stop
 
 @section('js')
-    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+    <script>
+        $(document).ready(function () {
+            new DataTable('#example');
+        });
+    </script>
 @stop
