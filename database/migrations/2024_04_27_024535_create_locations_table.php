@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('longitude');
-            $table->string('latitude');
+            $table->integer('weight');
             $table->string('status');
             $table->string('operational_time');
             $table->timestamps();
