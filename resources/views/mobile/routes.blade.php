@@ -1,7 +1,7 @@
 @extends('layouts.mobile')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/mobile/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mobile/style.css') }}" />
 @endsection
 
 @section('content')
@@ -28,6 +28,58 @@
 
 @section('js')
     <script>
+        $('.events  a').on('click', function(e) {
+            e.preventDefault();
+            var timelineId = parseInt($(this).data('id')); // Mengonversi data-id menjadi integer
+            function loadLocation(locationId) {
+                $.ajax({
+                    url: "/timeline/" + locationId,
+                    type: "GET",
+                    success: function(response) {
+                        // Perbarui elemen #location-info dengan data lokasi yang diterima
+                        displayLocation(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        // Tampilkan pesan kesalahan jika permintaan gagal
+                        $('#location-info').html('<p>Error loading location data.</p>');
+                    }
+                });
+            }
+
+            // Fungsi untuk menampilkan data lokasi di dalam elemen #location-info
+            function displayLocation(location) {
+                var html = '<h2>' + location.name + '</h2>';
+                html += '<p>Description: ' + location.description + '</p>';
+                html += '<p>Weight: ' + location.weight + '</p>';
+                html += '<p>Status: ' + location.status + '</p>';
+
+                // Loop melalui setiap hewan pada lokasi dan tambahkan informasi mereka
+                html += '<h3>Animals:</h3>';
+                html += '<ul>';
+                location.animals.forEach(function(animal) {
+                    html += '<li>';
+                    html += '<h4>' + animal.name + '</h4>';
+                    html += '<p>Species: ' + animal.species + '</p>';
+                    // Tambahkan informasi lainnya tentang hewan di sini
+                    html += '</li>';
+                });
+                html += '</ul>';
+
+                // Tampilkan hasilnya di dalam elemen #location-info
+                $('#location-info').html(html);
+            }
+
+            // Panggil fungsi loadLocation() saat halaman dimuat
+            loadLocation(timelineId); // Ganti angka 1 dengan ID lokasi yang ingin Anda muat
+
+        });
+
+        // $(document).ready(function() {
+        //
+        // });
+
+
         jQuery(document).ready(function ($) {
             var timelines = $('.cd-horizontal-timeline'),
                 eventsMinDistance = 60;

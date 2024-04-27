@@ -57,3 +57,4 @@ Route::prefix('admin')->middleware('auth')->group( function() {
 });
 Route::get('/detail/{id}', [App\Http\Controllers\MobileController::class, 'detail']);
 Route::get('/routes', [App\Http\Controllers\MobileController::class, 'routes']);
+Route::get('/timeline/{id}', [App\Http\Controllers\TimelineController::class, 'loadLocation']);
