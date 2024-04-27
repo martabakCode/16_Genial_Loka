@@ -55,3 +55,5 @@ Route::prefix('admin')->middleware('auth')->group( function() {
         Route::put('/animals', 'update');
     });
 });
+Route::get('/detail/{id}', [App\Http\Controllers\MobileController::class, 'detail']);
+Route::get('/routes', [App\Http\Controllers\MobileController::class, 'routes']);
