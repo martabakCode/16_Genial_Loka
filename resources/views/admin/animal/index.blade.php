@@ -12,7 +12,7 @@
         <a href="{{ url('/admin/location/create') }}" class="text-white">
             Tambah Lokasi
         </a>
-     </button>
+    </button>
     <div class="row">
         <div class="col-12">
             <div class="card">
