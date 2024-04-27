@@ -15,6 +15,5 @@ class MobileController extends Controller
     }
     public function routes(){
         return view('mobile.routes');
-
     }
 }

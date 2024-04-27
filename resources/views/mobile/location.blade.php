@@ -27,6 +27,7 @@
                                         <h5 class="card-title"><b>{{ $animal->species }} </b></h5>
                                         <i class="card-text">{{ $animal->latin_name }}</i>
                                         <p class="card-text mt-3">{{ Str::of($animal->description)->limit(300, '...') }}</p>
+
                                     </div>
                                 </div>
                             </div>
