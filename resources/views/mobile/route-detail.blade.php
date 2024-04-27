@@ -1,3 +1,5 @@
+
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -8,9 +10,9 @@
                             <div class="events-wrapper">
                                 <div class="events" style="width: 1800px;">
                                     <ol>
-                                        <li><a href="#0" data-date="16/01/2017" class="older-event" style="left: 120px;">16 Jan</a></li>
-                                        <li><a href="#0" data-date="28/02/2017" style="left: 300px;" class="older-event">28 Feb</a></li>
-                                        <li><a href="#0" data-date="20/04/2017" style="left: 480px;" class="selected">20 Mar</a></li>
+                                        <li><a href="#0" data-date="16/01/2017" style="left: 120px;" class="selected">16 Jan</a></li>
+                                        <li><a href="#0" data-date="28/02/2017" style="left: 300px;">28 Feb</a></li>
+                                        <li><a href="#0" data-date="20/04/2017" style="left: 480px;">20 Mar</a></li>
                                         <li><a href="#0" data-date="20/05/2017" style="left: 600px;">20 May</a></li>
                                         <li><a href="#0" data-date="09/07/2017" style="left: 780px;">09 Jul</a></li>
                                         <li><a href="#0" data-date="30/08/2017" style="left: 960px;">30 Aug</a></li>

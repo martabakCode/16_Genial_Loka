@@ -42,7 +42,7 @@
                                             Nama
                                         </th>
                                         <th>
-                                            Spesias
+                                            Spesies
                                         </th>
                                         <th>
                                             Nama Latin

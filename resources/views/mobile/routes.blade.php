@@ -5,8 +5,9 @@
 @endsection
 
 @section('content')
-
+    <div class="container-xxl py-5">
     @include('mobile.route-detail')
+    </div>
     <div class="container-xxl py-5">
         <div class="container">
             <div id="timerContainer" class="text-center bg-white p-4 rounded border border-secondary">
@@ -28,7 +29,7 @@
 
 @section('js')
     <script>
-        jQuery(document).ready(function ($) {
+        $(document).ready(function ($) {
             var timelines = $('.cd-horizontal-timeline'),
                 eventsMinDistance = 60;
 

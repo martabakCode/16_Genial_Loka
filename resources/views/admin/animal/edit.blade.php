@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="name">Spesias</label>
+                        <label for="name">Spesies</label>
                         <input type="text" class="form-control" id="name" name="species" value="{{ $animal->species }}">
                     </div>
                     <div class="form-group col-md-6">
