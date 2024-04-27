@@ -37,14 +37,14 @@ Route::prefix('admin')->middleware('auth')->group( function() {
         Route::get('animal-images/{animalImage}/edit', 'edit')->name('animal-images.edit');
         Route::put('animal-images/{animalImage}', 'update')->name('animal-images.update');
         Route::delete('animal-images/{animalImage}', 'destroy')->name('animal-images.destroy');
-
-        Route::get('/location', [App\Http\Controllers\LocationController::class, 'index']);
-        Route::get('/location/create', [App\Http\Controllers\LocationController::class, 'create']);
-        Route::get('/location/update/{id}', [App\Http\Controllers\LocationController::class, 'edit']);
-        Route::get('/location/destroy/{id}', [App\Http\Controllers\LocationController::class, 'destroy']);
-        Route::post('/location', [App\Http\Controllers\LocationController::class, 'store']);
-        Route::put('/location', [App\Http\Controllers\LocationController::class, 'update']);
-
-        Route::get('/animals', [\App\Http\Controllers\AnimalController::class], 'index');
     });
+
+    Route::get('/location', [App\Http\Controllers\LocationController::class, 'index']);
+    Route::get('/location/create', [App\Http\Controllers\LocationController::class, 'create']);
+    Route::get('/location/update/{id}', [App\Http\Controllers\LocationController::class, 'edit']);
+    Route::get('/location/destroy/{id}', [App\Http\Controllers\LocationController::class, 'destroy']);
+    Route::post('/location', [App\Http\Controllers\LocationController::class, 'store']);
+    Route::put('/location', [App\Http\Controllers\LocationController::class, 'update']);
+
+    Route::get('/animals', [\App\Http\Controllers\AnimalController::class], 'index');
 });

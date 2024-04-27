@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Animal;
 use App\Models\AnimalImage;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,9 @@ class AnimalImageController extends Controller
 
     public function create()
     {
-        return view('admin.animal-image.create');
+        $animals = Animal::get();
+
+        return view('admin.animal-image.create', compact('animals'));
     }
 
     public function store(Request $request)
@@ -26,12 +29,15 @@ class AnimalImageController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('animal_images'), $imageName);
+        $file = $request->file('image');
+        $random_name = time().'_'.rand(1000,9999);
+        $imageName = $random_name . '.' . $file->extension();
+        $file->move(public_path('storage/animal_images'), $imageName);
 
         AnimalImage::create([
             'animal_id' => $request->animal_id,
-            'image' => $imageName,
+            'file_name' => $imageName,
+            'url' => url('storage/animal_images/' . $imageName),
         ]);
 
         return redirect()->route('animal-images.index')
@@ -50,12 +56,17 @@ class AnimalImageController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('animal_images'), $imageName);
+        if (file_exists(public_path('animal-images/' . $animalImage->image))) {
+            unlink(public_path('animal-images/' . $animalImage->image));
+        }
+
+        $file = $request->file('image');
+        $imageName = time() . '.' . $file->extension();
+        $file->move(public_path('storage/animal_images'), $imageName);
 
         $animalImage->update([
             'animal_id' => $request->animal_id,
-            'image' => $imageName,
+            'file_name' => $imageName,
         ]);
 
         return redirect()->route('animal-images.index')
