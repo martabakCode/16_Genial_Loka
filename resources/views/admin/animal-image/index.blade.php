@@ -33,9 +33,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php $no = 1 @endphp
                             @forelse($animal_images as $ai)
                                 <tr>
-                                    <td>{{ $ai->id }}</td>
+                                    <td>{{ $no }}</td>
                                     <td>{{ $ai->animal->name }}</td>
                                     <td>{{ $ai->animal->species }}</td>
                                     <td>{{ $ai->file_name }}</td>
@@ -45,7 +46,7 @@
                                     <td><img src="{{ $ai->url }}" class="img-thumbnail" alt="asd" width="50%"></td>
                                     <td>
                                         <div class="d-flex justify-content-between">
-                                            <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="{{ route('animal-images.edit', $ai->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
                                             <form action="{{ route('animal-images.destroy', $ai->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -56,6 +57,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php $no++ @endphp
                             @empty
                                 <tr>
                                     <td colspan="6">Tidak ada data</td>

@@ -46,27 +46,36 @@ class AnimalImageController extends Controller
 
     public function edit(AnimalImage $animalImage)
     {
-        return view('admin.animal-image.edit', compact('animalImage'));
+        $animals = Animal::get();
+
+        return view('admin.animal-image.edit', compact('animalImage', 'animals'));
     }
 
     public function update(Request $request, AnimalImage $animalImage)
     {
+//        dd($request->all());
         $request->validate([
             'animal_id' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        if (file_exists(public_path('storage/animal-images/' . $animalImage->image))) {
-            unlink(public_path('storage/animal-images/' . $animalImage->image));
+        if ($request->hasFile('image') ) {
+            if (isset($animalImage->image)) {
+                unlink(public_path('storage/animal-images/' . $animalImage->image));
+            }
+
+            $file = $request->file('image');
+            $imageName = time() . '.' . $file->extension();
+            $file->move(public_path('storage/animal_images'), $imageName);
+        } else {
+            $imageName = $animalImage->file_name;
         }
 
-        $file = $request->file('image');
-        $imageName = time() . '.' . $file->extension();
-        $file->move(public_path('storage/animal_images'), $imageName);
-
+//        dd($imageName);
         $animalImage->update([
             'animal_id' => $request->animal_id,
             'file_name' => $imageName,
+            'url' => url('storage/animal_images/' . $imageName),
         ]);
 
         return redirect()->route('animal-images.index')

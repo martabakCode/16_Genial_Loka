@@ -16,8 +16,8 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="animal_id">Animal</label>
-                    <select name="animal_id" id="animal_id" class="form-control select2">
-                        <option>Select Animal</option>
+                    <select name="animal_id" id="animal_id" class="form-control">
+                        <option selected disabled hidden>Select Animal</option>
                         @foreach($animals as $animal)
                             <option value="{{ $animal->id }}">{{ $animal->name }} | {{ $animal->species }}</option>
                         @endforeach
@@ -29,7 +29,9 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
             </div>
         </form>
     </div>
@@ -43,7 +45,7 @@
 @section('js')
     <script>
         $(document).ready(function () {
-            $('#animal_id').select2();
+            // $('#animal_id').select2();
         });
     </script>
 @endsection
