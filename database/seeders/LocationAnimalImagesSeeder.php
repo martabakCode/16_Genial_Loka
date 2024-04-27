@@ -15,6 +15,7 @@ class LocationAnimalImagesSeeder extends Seeder
     {
         $locations = [
             [
+                # 1
                 'name' => 'Zona Afrika',
                 'description' => 'Zona afrika memberikan pengalaman interaktif dengan hewan yang menghuni dataran savana afrika.',
                 'weight' => 7,
@@ -22,6 +23,7 @@ class LocationAnimalImagesSeeder extends Seeder
                 'operational_time' => 'Sabtu - Minggu, 08.00-11.00',
             ],
             [
+                # 2
                 'name' => 'Aves',
                 'description' => 'Ini adalah zona hewan aves atau hewan burung subfilum Vertebrata yang bagian tubuhnya tertutup bulu. Dalam zona ini terdapat berbagai jenis burung baik itu langka, terancam punah maupun jenis burung yang cukup terjaga angkanya di alam liar.',
                 'weight' => 6,
@@ -29,6 +31,7 @@ class LocationAnimalImagesSeeder extends Seeder
                 'operational_time' => 'Sabtu - Minggu, 08.00-11.00',
             ],
             [
+                # 3
                 'name' => 'Reptil',
                 'description' => 'Zona reptil adalah zona yang menampilkan berbagai jenis reptil yang ada di dunia. Reptil adalah hewan vertebrata yang memiliki kulit bersisik dan bertelur. Reptil terdiri dari berbagai jenis, mulai dari ular, kura-kura, buaya, dan lain-lain.',
                 'weight' => 8,
@@ -36,6 +39,7 @@ class LocationAnimalImagesSeeder extends Seeder
                 'operational_time' => 'Sabtu - Minggu, 08.00-11.00',
             ],
             [
+                # 4
                 'name' => 'Mamalia',
                 'description' => 'Zona mamalia adalah zona yang menampilkan berbagai jenis mamalia yang ada di dunia. Mamalia adalah hewan vertebrata yang memiliki kelenjar susu dan memiliki rambut. Mamalia terdiri dari berbagai jenis, mulai dari hewan darat, laut, dan udara.',
                 'weight' => 9,
@@ -57,7 +61,8 @@ class LocationAnimalImagesSeeder extends Seeder
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
                 'date_of_birth' => '2024-04-17',
                 'weight' => 500,
-                'is_feedable' => 1
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/3VJqy3'
             ],
             [
                 'location_id' => 1,
@@ -70,12 +75,13 @@ class LocationAnimalImagesSeeder extends Seeder
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
                 'date_of_birth' => '2024-04-17',
                 'weight' => 500,
-                'is_feedable' => 1
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/Lkd1V3'
             ],
             [
                 'location_id' => 2,
                 'name' => 'Tuwir',
-                'species' => 'Kakaatua',
+                'species' => 'Kakatua',
                 'latin_name' => 'Cacatua',
                 'description' => 'Kakatua adalah burung yang berasal dari Australia, Papua Nugini, dan Indonesia. Kakatua memiliki bulu yang berwarna cerah dan memiliki paruh yang besar.',
                 'food' => 'Biji-bijian',
@@ -83,7 +89,8 @@ class LocationAnimalImagesSeeder extends Seeder
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
                 'date_of_birth' => '2018-04-17',
                 'weight' => 2,
-                'is_feedable' => 1
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/Lkd1V3',
             ],
             [
                 'location_id' => 2,
@@ -96,7 +103,8 @@ class LocationAnimalImagesSeeder extends Seeder
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
                 'date_of_birth' => '2018-04-17',
                 'weight' => 3,
-                'is_feedable' => 1
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/Lkd1V3',
             ],
             [
                 'location_id' => 3,
@@ -109,7 +117,8 @@ class LocationAnimalImagesSeeder extends Seeder
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
                 'date_of_birth' => '2018-04-17',
                 'weight' => 5,
-                'is_feedable' => 1
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/Lkd1V3',
             ],
             [
                 'location_id' => 3,
@@ -122,7 +131,8 @@ class LocationAnimalImagesSeeder extends Seeder
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
                 'date_of_birth' => '2018-04-17',
                 'weight' => 5,
-                'is_feedable' => 1
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/Lkd1V3',
             ],
             [
                 'location_id' => 4,
@@ -133,18 +143,24 @@ class LocationAnimalImagesSeeder extends Seeder
                 'food' => 'Daging',
                 'reproduction' => 'betina',
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
-                'date_of_birth' => '2018-04-02'
+                'date_of_birth' => '2018-04-02',
+                'weight' => 5,
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/lnbydl'
             ],
             [
                 'location_id' => 4,
-                'name' => 'Koko',
+                'name' => 'Koro',
                 'species' => 'Orangutan',
                 'latin_name' => 'Pongo',
                 'description' => 'Orangutan adalah hewan primata yang hidup di hutan hujan Indonesia. Orangutan merupakan satwa endemik Indonesia yang terancam punah.',
                 'food' => 'Buah-buahan',
                 'reproduction' => 'jantan',
                 'feeding_time' => 'Senin & Jumat, 10.00 - 13.00',
-                'date_of_birth' => '2018-04-02'
+                'date_of_birth' => '2018-04-02',
+                'weight' => 5,
+                'is_feedable' => 1,
+                'ar_url' => 'https://studio.onirix.com/exp/Lkd1V3',
             ],
         ];
         DB::table('animals')->insert($animals);
