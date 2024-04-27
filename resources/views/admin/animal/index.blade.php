@@ -3,21 +3,20 @@
 @section('title', 'Location')
 
 @section('content_header')
-    <h1>Location</h1>
+    <h1>Animals</h1>
 @stop
 
 @section('content')
-    <p>Location panel.</p>
-    <button class="btn btn-sm btn-success mb-3">
-        <a href="{{ url('/admin/animals/create') }}" class="text-white">
-            Tambah Hewan
-        </a>
-    </button>
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Loka website app</h3>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="card-title">Loka website app</h3>
+                        <a class="btn btn-primary" href="{{ url('/admin/animals/create') }}">
+                            <i class="fas fa-plus"></i> Tambah Hewan
+                        </a>
+                    </div>
                 </div>
 
                 <div class="card-body">
@@ -33,49 +32,55 @@
                                        aria-describedby="example2_info">
                                     <thead>
                                     <tr>
-                                        <th class="sorting sorting_asc">
+                                        <th>
+                                            No
+                                        </th>
+                                        <th>
                                             Lokasi
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Nama
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Spesias
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Nama Latin
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Deskripsi
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Makanan
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Reproduksi
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Waktu Makan
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Lahir
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Berat
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Is Feedable
                                         </th>
-                                        <th class="sorting">
+                                        <th>
                                             Action
                                         </th>
                                     </tr>
                                     </thead>
                                     <tbody>
 
-                                    @foreach($animals as $animal)
+                                    @php $no = 1; @endphp
+                                    @forelse($animals as $animal)
                                         <tr>
-                                            <td class="dtr-control sorting_1" tabindex="0">{{ $animal->location->name }}</td>
+                                            <td>{{ $no }}</td>
+                                            <td class="dtr-control sorting_1"
+                                                tabindex="0">{{ $animal->location->name }}</td>
                                             <td>{{ $animal->name }}</td>
                                             <td>{{ $animal->species }}</td>
                                             <td>{{ $animal->latin_name }}</td>
@@ -87,15 +92,26 @@
                                             <td>{{ $animal->weight }}</td>
                                             <td>{{ $animal->is_feedable }}</td>
                                             <td>
-                                                <a href="{{ url('/admin/animals/' . $animal->id . '/update') }}">
-                                                    Edit
-                                                </a> |
-                                                <a href="{{ url('/admin/animals/' . $animal->id . '/destroy') }}">
-                                                    Delete
-                                                </a>
+                                                <div class="d-flex justify-content-between">
+                                                    <a class="btn btn-warning"
+                                                       href="{{ url('/admin/animals/' . $animal->id . '/update') }}">
+                                                        <i class="fas fa-edit"></i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger"
+                                                       href="{{ url('/admin/animals/' . $animal->id . '/destroy') }}">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                        Delete
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                        @php $no++; @endphp
+                                    @empty
+                                        <tr>
+                                            <td colspan="12" class="text-center">Tidak ada data</td>
+                                        </tr>
+                                    @endforelse
                                     </tbody>
                                 </table>
                             </div>
@@ -115,7 +131,7 @@
 @section('js')
     <script>
         $(document).ready(function () {
-            new DataTable('#example');
+            $('#example').DataTable();
         });
     </script>
 @stop

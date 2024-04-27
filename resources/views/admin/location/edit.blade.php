@@ -3,43 +3,57 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Location</h1>
 @stop
 
 @section('content')
-    <form action="/admin/location" method="post">
-        @method('PUT')
-        @csrf
-        <input type="hidden" name="id" value="{{ $location->id }}">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $location->name }}">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="ops">Operational Time</label>
-                <input type="text" class="form-control" id="ops" name="operational_time" value="{{ $location->operational_time }}">
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Edit Location</h3>
         </div>
+        <form action="/admin/location" method="post">
+            <div class="card-body">
+                @method('PUT')
+                @csrf
+                <input type="hidden" name="id" value="{{ $location->id }}">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ $location->name }}">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ops">Operational Time</label>
+                        <input type="text" class="form-control" id="ops" name="operational_time"
+                               value="{{ $location->operational_time }}">
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" >{{ $location->description }}</textarea>
-        </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                              name="description">{{ $location->description }}</textarea>
+                </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="weight">weight</label>
-                <input type="number" class="form-control" id="weight" name="weight" value="{{ $location->weight }}">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="weight">Weight</label>
+                        <input type="number" class="form-control" id="weight" name="weight"
+                               value="{{ $location->weight }}">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="status">Status</label>
+                        <input type="text" class="form-control" id="status" name="status"
+                               value="{{ $location->status }}">
+                    </div>
+                </div>
             </div>
-            <div class="form-group col-md-6">
-                <label for="status">Status</label>
-                <input type="text" class="form-control" id="status" name="status" value="{{ $location->status }}">
+            <div class="card-footer">
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
             </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form>
+        </form>
+    </div>
 @stop
 
 @section('css')

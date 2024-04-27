@@ -7,17 +7,15 @@
 @stop
 
 @section('content')
-    <p>Location panel.</p>
-    <button class="btn btn-sm btn-success mb-3">
-        <a href="{{ url('/admin/location/create') }}" class="text-white">
-            Tambah Lokasi
-        </a>
-     </button>
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Loka website app</h3>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="card-title">List Location</h3>
+                        <a class="btn btn-primary" href="{{ url('/admin/location/create') }}">
+                            <i class="fas fa-plus"></i> Add Location </a>
+                    </div>
                 </div>
 
                 <div class="card-body">
@@ -67,12 +65,18 @@
                                             <td>{{ $location->status }}</td>
                                             <td>{{ $location->operational_time }}</td>
                                             <td>
-                                                <a href="{{ url('/admin/location/update/' . $location->id) }}">
-                                                    Edit
-                                                </a> |
-                                                <a href="{{ url('/admin/location/destroy/' . $location->id) }}">
-                                                    Delete
-                                                </a>
+                                                <div class="d-flex-justify-content-between">
+                                                    <a class="btn btn-warning"
+                                                       href="{{ url('/admin/location/update/' . $location->id) }}">
+                                                        <i class="fas fa-edit"></i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger"
+                                                       href="{{ url('/admin/location/destroy/' . $location->id) }}">
+                                                        <i class="fas fa-trash"></i>
+                                                        Delete
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -95,7 +99,7 @@
 @section('js')
     <script>
         $(document).ready(function () {
-            new DataTable('#example');
+            $('#example').DataTable();
         });
     </script>
 @stop
