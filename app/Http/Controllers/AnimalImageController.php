@@ -56,8 +56,8 @@ class AnimalImageController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        if (file_exists(public_path('animal-images/' . $animalImage->image))) {
-            unlink(public_path('animal-images/' . $animalImage->image));
+        if (file_exists(public_path('storage/animal-images/' . $animalImage->image))) {
+            unlink(public_path('storage/animal-images/' . $animalImage->image));
         }
 
         $file = $request->file('image');
@@ -75,8 +75,8 @@ class AnimalImageController extends Controller
 
     public function destroy(AnimalImage $animalImage)
     {
-        if (file_exists(public_path('animal-images/' . $animalImage->image))) {
-            unlink(public_path('animal-images/' . $animalImage->image));
+        if (file_exists(public_path('storage/animal-images/' . $animalImage->image))) {
+            unlink(public_path('storage/animal-images/' . $animalImage->image));
         }
         $animalImage->delete();
 
