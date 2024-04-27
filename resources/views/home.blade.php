@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">DataTable with default features</h3>

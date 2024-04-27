@@ -31,6 +31,11 @@ Route::prefix('admin')->middleware('auth')->group( function() {
     Route::get('/location', [App\Http\Controllers\LocationController::class, 'index']);
 
     Route::controller(AnimalImageController::class)->group(function () {
-        Route::get('animal-images', 'index');
+        Route::get('animal-images', 'index')->name('animal-images.index');
+        Route::get('animal-images/create', 'create')->name('animal-images.create');
+        Route::post('animal-images', 'store')->name('animal-images.store');
+        Route::get('animal-images/{animalImage}/edit', 'edit')->name('animal-images.edit');
+        Route::put('animal-images/{animalImage}', 'update')->name('animal-images.update');
+        Route::delete('animal-images/{animalImage}', 'destroy')->name('animal-images.destroy');
     });
 });
