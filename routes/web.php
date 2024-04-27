@@ -23,11 +23,11 @@ use App\Http\Controllers\CampaignController;
 */
 
 Route::redirect('/', 'login');
-
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::resource('space', \App\Http\Controllers\SpaceController::class);
+});
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-        Route::resource('space', \App\Http\Controllers\SpaceController::class);
-    });
+
     // Route for the getting the data feed
     Route::get('/json-data-feed', [DataFeedController::class, 'getDataFeed'])->name('json_data_feed');
 

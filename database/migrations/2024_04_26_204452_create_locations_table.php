@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->integer('space_id')->unsigned();
             $table->string('name');
             $table->text('description');
             $table->string('longitude');
@@ -21,9 +20,6 @@ return new class extends Migration
             $table->string('food');
             $table->string('reproduction');
             $table->timestamps();
-        });
-        Schema::table('locations', function($table) {
-            $table->foreign('space_id')->references('id')->on('spaces');
         });
     }
 
