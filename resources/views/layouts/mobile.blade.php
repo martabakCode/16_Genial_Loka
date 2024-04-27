@@ -38,6 +38,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet" />
+
+      @yield('css')
   </head>
 
   <body>
@@ -212,5 +214,7 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('js/main.js')}}"></script>
+
+    @yield('js')
   </body>
 </html>

@@ -8,7 +8,7 @@ use App\Models\Location;
 class MobileController extends Controller
 {
     public function detail($id){
-        return view('mobile.detail', [
+        return view('mobile.location', [
             'location' => Location::with('animals.animal_images')->find($id)
         ]);
 
