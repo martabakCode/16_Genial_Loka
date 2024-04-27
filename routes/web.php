@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnimalImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,11 @@ Route::get('/home', function() {
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function() {
+Route::prefix('admin')->middleware('auth')->group( function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/admin/location', [App\Http\Controllers\LocationController::class, 'index']);
+    Route::get('/location', [App\Http\Controllers\LocationController::class, 'index']);
+
+    Route::controller(AnimalImageController::class)->group(function () {
+        Route::get('animal-images', 'index');
+    });
 });
