@@ -46,5 +46,12 @@ Route::prefix('admin')->middleware('auth')->group( function() {
     Route::post('/location', [App\Http\Controllers\LocationController::class, 'store']);
     Route::put('/location', [App\Http\Controllers\LocationController::class, 'update']);
 
-    Route::get('/animals', [\App\Http\Controllers\AnimalController::class], 'index');
+    Route::controller(\App\Http\Controllers\AnimalController::class)->group(function () {
+        Route::get('/animals', 'index');
+        Route::get('/animals/create', 'create');
+        Route::post('/animals', 'store');
+        Route::get('/animals/{id}/update', 'edit');
+        Route::get('/animals/{id}/destroy', 'destroy');
+        Route::put('/animals', 'update');
+    });
 });
