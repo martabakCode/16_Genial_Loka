@@ -19,7 +19,7 @@
                                 <div class="col-md-4">
                                     <img
                                         src="{{ $animal->animal_images->first()->url ?? 'https://placehold.co/150x100' }}"
-                                        class="card-img" alt="...">
+                                        class="card-img">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -27,7 +27,7 @@
                                         <h5 class="card-title"><b>{{ $animal->species }} </b></h5>
                                         <i class="card-text">{{ $animal->latin_name }}</i>
                                         <p class="card-text mt-3">{{ Str::of($animal->description)->limit(300, '...') }}</p>
-
+                                        <a href="{{$animal->ar_url}}" class="btn btn-success">Try On AR</a>
                                     </div>
                                 </div>
                             </div>
