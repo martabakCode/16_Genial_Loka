@@ -10,10 +10,10 @@
                             <div class="events-wrapper">
                                 <div class="events" style="width: 1800px;">
                                     <ol>
-                                        <li><a href="#0" data-date="16/01/2017" style="left: 120px;" class="selected">16 Jan</a></li>
-                                        <li><a href="#0" data-date="28/02/2017" style="left: 300px;">28 Feb</a></li>
-                                        <li><a href="#0" data-date="20/04/2017" style="left: 480px;">20 Mar</a></li>
-                                        <li><a href="#0" data-date="20/05/2017" style="left: 600px;">20 May</a></li>
+                                        <li><a href="#0" data-id="1" data-date="16/01/2017" class="older-event selected" style="left: 120px;">16 Jan</a></li>
+                                        <li><a href="#0" data-id="2" data-date="28/02/2017" style="left: 300px;" class="older-event">28 Feb</a></li>
+                                        <li><a href="#0" data-id="3" data-date="20/04/2017" style="left: 480px;">20 Mar</a></li>
+                                        <li><a href="#0" data-id="4" data-date="20/05/2017" style="left: 600px;">20 May</a></li>
                                         <li><a href="#0" data-date="09/07/2017" style="left: 780px;">09 Jul</a></li>
                                         <li><a href="#0" data-date="30/08/2017" style="left: 960px;">30 Aug</a></li>
                                         <li><a href="#0" data-date="15/09/2017" style="left: 1020px;">15 Sep</a></li>
@@ -32,6 +32,9 @@
                                 <li><a href="#0" class="next">Next</a></li>
                             </ul>
                             <!-- .cd-timeline-navigation -->
+                        </div>
+                        <div id="location-info">
+
                         </div>
                         <!-- .timeline -->
                         <div class="events-content" style="height: 225px;">
