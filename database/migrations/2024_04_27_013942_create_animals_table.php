@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('animals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('location_id')->constrained();
             $table->string('name');
-            $table->text('description');
-            $table->string('longitude');
-            $table->string('latitude');
-            $table->string('status');
+            $table->string('food');
+            $table->string('reproduction');
+            $table->string('feeding_time');
+            $table->date('date_of_birth');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('animals');
     }
 };
