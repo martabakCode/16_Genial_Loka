@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h3 class="card-title">{{ $animal->name }}</h3>
+                                        <h3 class="card-title"><a href="{{ url('detail/'. $location->id .'/animal/'.$animal->id) }}">{{ $animal->name }}</a></h3>
                                         <h5 class="card-title"><b>{{ $animal->species }} </b></h5>
                                         <i class="card-text">{{ $animal->latin_name }}</i>
                                         <p class="card-text mt-3">{{ Str::of($animal->description)->limit(300, '...') }}</p>

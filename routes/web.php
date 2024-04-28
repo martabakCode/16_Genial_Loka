@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return to_route('detail', 1);
 });
 
 Auth::routes();
@@ -55,6 +55,7 @@ Route::prefix('admin')->middleware('auth')->group( function() {
         Route::put('/animals', 'update');
     });
 });
-Route::get('/detail/{id}', [App\Http\Controllers\MobileController::class, 'detail']);
+Route::get('/detail/{id}', [App\Http\Controllers\MobileController::class, 'detail'])->name('detail');
 Route::get('/routes', [App\Http\Controllers\MobileController::class, 'routes']);
 Route::get('/timeline/{id}', [App\Http\Controllers\TimelineController::class, 'loadLocation']);
+Route::get('/detail/{id}/animal/{animalId}', [App\Http\Controllers\MobileController::class, 'animal_detail'])->name('animal_detail');
